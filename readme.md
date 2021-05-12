@@ -13,6 +13,9 @@
 <a href="https://review.kakaku.com/review/J0000033836/#tab">iPadのレビューコメント</a>のサンプル画像
 <img src="word_cloud_sample_ipad.png">
 
+<a href="https://review.kakaku.com/review/K0000695816/#tab">フロムザバレル(ウィスキー)</a>のサンプル画像
+<img src="word_cloud_sample_whisky.png">
+
 <h2>使用方法</h2>
 <hr>
 源暎ゴシックNというフォントを使用しているので、フォントについてはプログラム内の fontpath を変更してください。

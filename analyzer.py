@@ -5,10 +5,20 @@ from wordcloud import WordCloud
 import requests
 import MeCab
 from bs4 import BeautifulSoup
+import urllib
 #from gensim.models import KeyedVectors
 
+#ストップワード辞書のslothlibを使用
+slothlib_path = 'http://svn.sourceforge.jp/svnroot/slothlib/CSharp/Version1/SlothLib/NLP/Filter/StopWord/word/Japanese.txt'
+slothlib_file = urllib.request.urlopen(slothlib_path)
+slothlib_stopwords = [line.decode("utf-8").strip() for line in slothlib_file]
+slothlib_stopwords = [ss for ss in slothlib_stopwords if not ss==u'']
 
 StopWordJa = ["もの", "こと", "とき", "そう", "たち", "これ", "よう", "これら", "それ", "すべて"]
+
+StopWordJa += slothlib_stopwords
+
+StopWordJa = list(set(StopWordJa))
 
 #日本語用
 def  create_word_cloud_ja(word_list):
